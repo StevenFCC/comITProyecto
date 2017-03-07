@@ -2,7 +2,7 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title></title>
+    <title>INDICE</title>
 	<!-- archivos js que serán usados -->
 	<script type="text/javascript" src="js/listado.js" ></script>
 	
@@ -18,15 +18,33 @@
 	
 	<br>
 	
-	<!-- Agregar acá dinámicamente otro elemento a la página -->
-	<!-- 
+	<!-- Agregar acá dinámicamente otro elemento a la página'flash''camara_frontal' -->
+	 
 	<div id="nuevosElementos">
 	</div>
 	
-	<input type="button" onclick="agregarElementos()" title="Al presionar este botón se ejecutará el método indicado en onclick" value="Agregar elementos"></input><br>
+	<div id="divEspecificaciones">
+	<input id="input" type="button" onclick="agregarTodosLosCelulares()" title="Al presionar este botón se ejecutará el método indicado en onclick" 
+	value="Agregar todos los celulares"></input>
 	<br>
-	 -->
+	<input id="inputeliminar" type="button" onclick="eliminarElementos()" value="Eliminar listas"></input><br>
+	<br>
+
+	<p>Filtros:</p>
 	
+	<p>
+	Mostrar Celulares con Camara Frontal
+	<input id="inputCamaraFrontal" type="checkbox"></input>
+	<input type="button" onclick="checkboxCamaraFrontal()" value="Filtrar"></input>
+	</p>
+
+	<p>
+	Mostrar Celulares con Flash
+	<input id="inputFlash" type="checkbox"></input>
+	<input type="button" onclick="checkboxFlash()" value="Filtrar"></input>
+	</p>
+
 	<a href="paginas/lista.html">Ir al listado de celulares</a>
+	</div>
 </body>
 </html>
