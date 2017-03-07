@@ -137,7 +137,7 @@ function agregarTodosLosCelulares() {
 
 	for ( var cont = 0 ; cont < listadoCelulares.length ; cont++) {
 		
-		listaCelulares(cont)
+		listaCelulares(cont);
 	}
 }
 
@@ -150,7 +150,7 @@ function eliminarElementos() {
 	}	
 }
 
-function filtrarPorCamaraFrontalOFlash(camaraFlash) {
+function seleccionarCamaraFrontalOFlash(camaraFlash) {
 	
 	eliminarElementos();
 
@@ -163,20 +163,64 @@ function filtrarPorCamaraFrontalOFlash(camaraFlash) {
 	}
 }
 
-function checkboxCamaraFrontal () {
+function estadosDeCheckboxs() {
 
 	var inputCamaraFrontal = document.getElementById("inputCamaraFrontal");
-	
+	var inputFlash = document.getElementById("inputFlash");
+}
+
+function filtrarPorCamaraFrontal() {
+
+	estadosDeCheckboxs();
+
 	if (inputCamaraFrontal.checked == true) {
-		filtrarPorCamaraFrontalOFlash("camara_frontal");
+
+		if (inputFlash.checked == false) {
+
+			seleccionarCamaraFrontalOFlash("camara_frontal");
+		}
 	}
 }
 
-function checkboxFlash () {
+function filtrarPorFlash() {
 
-	var inputFlash = document.getElementById("inputFlash");
-	
-	if (inputFlash.checked == true) {
-		filtrarPorCamaraFrontalOFlash("flash");
+	estadosDeCheckboxs();
+
+	if (inputCamaraFrontal.checked == false) {
+
+		if (inputFlash.checked == true) {
+
+			seleccionarCamaraFrontalOFlash("flash");
+		}
 	}
+}
+
+function filtrarPorCamaraFrontalConFlash() {
+	
+	estadosDeCheckboxs();
+
+	if (inputCamaraFrontal.checked == true) {
+
+		if (inputFlash.checked == true) {
+
+			for ( var cont = 0 ; cont < listadoCelulares.length ; cont++) {
+			
+				if (listadoCelulares[cont].camara_frontal) {
+
+					if (listadoCelulares[cont].flash) {
+
+						listaCelulares(cont);
+					}
+				}
+			}
+		}
+	}	
+}
+
+function filtrar () {
+
+	eliminarElementos();
+	filtrarPorCamaraFrontal();
+	filtrarPorFlash();
+	filtrarPorCamaraFrontalConFlash();
 }
