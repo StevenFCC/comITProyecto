@@ -1,5 +1,6 @@
 listadoCelulares = [
 		{
+			"imagen": "../webapp/paginas/imagenes/Moto-G4-Play-1024x768.jpg",
 			"marca": "Motorola",
 			"modelo": "G 4 PLAY",
 			"sistema_operativo": "Android",
@@ -11,6 +12,7 @@ listadoCelulares = [
 			"memoria_interna": "16 GB"
 		},
 		{
+			"imagen": "../webapp/paginas/imagenes/Moto-G4-Play-1024x768.jpg",
 			"marca": "Motorola",
 			"modelo": "G 4 PLAY",
 			"sistema_operativo": "Android",
@@ -22,6 +24,7 @@ listadoCelulares = [
 			"memoria_interna": "16 GB"
 		},
 		{
+			"imagen": "../webapp/paginas/imagenes/Moto-G4-Play-1024x768.jpg",
 			"id": 1,
 			"marca": "Motorola",
 			"modelo": "G 4 PLAY",
@@ -35,6 +38,8 @@ listadoCelulares = [
 			"flash": true
 		},
 		{
+			
+			"imagen": "../webapp/paginas/imagenes/J5.jpg",
 			"id": 2,
 			"marca": "Samsung",
 			"modelo": "GALAXY J5 J510",
@@ -48,6 +53,7 @@ listadoCelulares = [
 			"flash": true
 		},
 		{
+			"imagen": "../webapp/paginas/imagenes/J7.jpg",
 			"id": 3,
 			"marca": "Samsung",
 			"modelo": "GALAXY J7 J710",
@@ -61,6 +67,7 @@ listadoCelulares = [
 			"flash": true
 		},
 		{
+			"imagen": "../webapp/paginas/imagenes/huaweiY360D.jpg",
 			"id": 4,
 			"marca": "Huawei",
 			"modelo": "Y360D",
@@ -74,6 +81,7 @@ listadoCelulares = [
 			"flash": true
 		},
 		{
+			"imagen": "../webapp/paginas/imagenes/lenovo-smartphone-vibe-k5-hero.png",
 			"id": 5,
 			"marca": "Lenovo",
 			"modelo": "VIBE K5",
@@ -111,11 +119,20 @@ function propiedadCelularCheckbox(propiedad,lista,padre) {
 	li.appendChild(input);
 }
 
+function imagenDeCelular (padre,fuente) {
+
+	var img = document.createElement("img");
+	img.className = "imgTamaño";
+	img.setAttribute("src", fuente)
+	padre.appendChild(img);
+}
+
 function listaCelulares(contador) {
 	
 	var ul = document.createElement("ul");
 		ul.className = "ulnuevo";
 
+			imagenDeCelular(ul,listadoCelulares[contador].imagen);
 			propiedadCelular("Marca: ",listadoCelulares[contador].marca,ul);
 			propiedadCelular("Modelo: ",listadoCelulares[contador].modelo,ul);
 			propiedadCelular("Sistema Operativo: ",listadoCelulares[contador].sistema_operativo,ul);
