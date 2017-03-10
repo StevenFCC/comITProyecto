@@ -7,10 +7,12 @@ import javax.ws.rs.QueryParam;
 
 @Path("echo")
 public class EchoController {
-
 	@GET
 	@Produces("text/plain")
-	public String echo(@QueryParam("m") String message) {
-		return "echo: " + message;
+	public String echo (@QueryParam("parametro") String message, @QueryParam("contador") int cont){
+		return "echo: " + message + cont;
 	}
 }
+
+
+
