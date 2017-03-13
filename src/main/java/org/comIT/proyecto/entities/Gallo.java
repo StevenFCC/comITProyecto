@@ -14,6 +14,6 @@ public class Gallo {
 	}
 
 	public String cacarear() {
-		return "Cocoroco";
+		return nombre + " dice Cocoroco";
 	}
 }

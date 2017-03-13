@@ -14,6 +14,6 @@ public class Gato {
 	}
 
 	public String maullar() {
-		return "Miau";
+		return nombre + " dice Miau";
 	}
 }
