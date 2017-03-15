@@ -1,19 +1,13 @@
 package org.comIT.proyecto.entities;
 
-public class Gato {
-
-	private String nombre;
+public class Gato extends Animales {
 	
 	public Gato(String nombre) {
-		
 		this.nombre = nombre;
 	}
 		
-	public String getNombre() {
-		return nombre;
-	}
-
-	public String maullar() {
+	@Override
+	public String emitirSonido() {
 		return nombre + " dice Miau";
 	}
 }
