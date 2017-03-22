@@ -1,27 +1,20 @@
-function crearPerro() {
-	endpoitAnimal("perro");
-}
-
-function crearGato() {
-	endpoitAnimal("gallo");
-}
-
-function crearGallina() {
-	endpoitAnimal("gallina");
-}
-
-function endpoitAnimal() {
+function establecerEndpoitAnimal(tipoDeAnimal) {
 	var xhr = new XMLHttpRequest();
-	xhr.open(GET, localhost:8080/comITProyecto/, true);
 	xhr.onreadystatechange = function() {
-		if (xhr.readyState == 2 && xhr.status == 200) {
-			
+		if (xhr.readyState == 4 && xhr.status == 200) {
+			crearSonidoAnimal(xhr.responseText);
 		}
 	}
+	var tomarInputValorNombreAnimal = document.getElementById("nombreDelAnimal");
+	var endpoint = "/comITProyecto/ws/guarderia" + tipoDeAnimal + "?nombre=" + tomarInputValorNombreAnimal.value;
+	xhr.open("GET", endpoint, true);
 	xhr.send(null);
 }
 
-function crearAnimal() {
-	var inputValor = document.getElementById('nombreAnimal').value;
-
+function crearSonidoAnimal(sonidoDeAnimal) {
+	var tomarDivHtml = document.getElementById("agregarAnimal");
+	var p = document.createElement("p");
+	var texto = document.createTextNode(sonidoDeAnimal);
+	p.appendChild(texto)
+	tomarDivHtml.appendChild(p);
 }
