@@ -5,16 +5,31 @@
 	<script type="text/javascript" src="../js/Guarderia.js"></script>
 </head>
 <body>
-	<input id="nombreDelAnimal" type="text"></input>
-	<br>
-	<br>
 	<select id="selectGetPost">
 		<option>GET</option>
 		<option>POST</option>
 	</select>
+	<br>
+	<br>
+	
+	<p>Nombre del Animal:</p>
+	<input id="nombreDelAnimal" type="text"></input>
+	<br>
+	<br>
+	
+	<div id="divDeNombreDeDuenno" class="ocultar">
+	<p>Nombre del dueño:</p>
+	<input id="nombreDelDuenno" type="text">
+	</div>
+	<br>
+	<br>
+
 	<input type="button" value="Agregar Perro" onclick="establecerEndpoitAnimal('/perro')"></input>
+	
 	<input type="button" value="Agregar Gato" onclick="establecerEndpoitAnimal('/gato')"></input>
+	
 	<input type="button" value="Agregar Gallo" onclick="establecerEndpoitAnimal('/gallo')"></input>
+	
 	<div id="agregarAnimal">
 	</div> 
 </body>

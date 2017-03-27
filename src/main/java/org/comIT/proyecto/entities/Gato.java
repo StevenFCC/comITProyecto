@@ -11,7 +11,7 @@ public class Gato extends Animales {
 	public String emitirSonido() {
 		String sonido = nombre + " dice Miau.";
 		if (this.getDuenno() != null) {
-			sonido += "Mi dueño es " + this.getDuenno().getName();
+			sonido += "Mi dueño es " + this.getDuenno();
 		}
 		return sonido;
 	}

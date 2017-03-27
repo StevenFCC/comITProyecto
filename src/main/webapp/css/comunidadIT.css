@@ -106,3 +106,11 @@ div#divEspecificaciones	{
 	margin-top: 30px;
 	margin-bottom: 30px;
 }
+
+.ocultar {
+	visibility: hidden;
+}
+
+.mostrar {
+	visibility: visible;
+}
