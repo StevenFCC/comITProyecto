@@ -29,7 +29,7 @@ public class Guarderia {
 	@GET	
 	@Path("/gato")
 	@Produces(MediaType.TEXT_PLAIN)
-	public String gato(@QueryParam("nombre") String nombregato, User nombreDuenno) {
+	public String gato(@QueryParam("nombre") String nombregato) {
 		Gato gato = new Gato(nombregato);
 		return gato.emitirSonido();
 	}

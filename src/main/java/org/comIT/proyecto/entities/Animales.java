@@ -18,5 +18,11 @@ public abstract class Animales {
 		this.duenno = duenno;
 	}
 
-	public abstract String emitirSonido();
+	public String emitirSonido(String nombre, String loQueDice) {
+		String sonido = nombre + loQueDice;	
+		if (this.getDuenno() != null) {
+			sonido += "Mi dueño es " + this.getDuenno().getName();
+		}
+		return sonido;
+	}
 }

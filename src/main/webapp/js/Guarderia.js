@@ -23,7 +23,7 @@ function establecerEndpoitAnimal(tipoDeAnimal) {
 	} else {
 		
 		var nombreDelDuenno = tomarYDarNombreDeDuenno();
-		if (nombreDuenno == null) {
+		if (nombreDelDuenno == null) {
 			alert("Dar nombre del dueño");
 			return;
 		}
