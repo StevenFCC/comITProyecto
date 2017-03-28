@@ -4,6 +4,7 @@ public abstract class Animales {
 	
 	protected String nombre;
 	protected User duenno;
+	protected String ruido;
 	
 	
 	public String getNombre() {
@@ -14,14 +15,20 @@ public abstract class Animales {
 		return duenno;
 	}
 
+	public String getRuido() {
+		return ruido;
+	}
+	
 	public void setDuenno(User duenno) {
 		this.duenno = duenno;
 	}
 
-	public String emitirSonido(String nombre, String loQueDice) {
-		String sonido = nombre + loQueDice;	
+	public abstract String emitirSonido();
+	
+	public String emitirSonidoConDuenno() {
+		String sonido = nombre + " dice" + ruido;
 		if (this.getDuenno() != null) {
-			sonido += "Mi dueño es " + this.getDuenno().getName();
+			sonido += " Mi dueño es " + this.getDuenno().getName();
 		}
 		return sonido;
 	}

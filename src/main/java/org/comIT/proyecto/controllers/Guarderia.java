@@ -22,15 +22,23 @@ public class Guarderia {
 	@Path("/perro")
 	@Produces(MediaType.TEXT_PLAIN)
 	public String perro(@QueryParam("nombre") String nombreperro) {
-		Perro perro = new Perro(nombreperro);
+		Perro perro = new Perro(nombreperro, null);
 		return perro.emitirSonido();
+	}
+	
+	@POST
+	@Path("/perro")
+	@Produces(MediaType.TEXT_PLAIN)
+	public String postperro(@QueryParam("nombre") String nombreperro, User nombreduenno) {
+		Perro perro = new Perro(nombreperro, " guau.");
+		return emitirSonidoConNombreDuenno(perro, nombreduenno);
 	}
 	
 	@GET	
 	@Path("/gato")
 	@Produces(MediaType.TEXT_PLAIN)
 	public String gato(@QueryParam("nombre") String nombregato) {
-		Gato gato = new Gato(nombregato);
+		Gato gato = new Gato(nombregato, null);
 		return gato.emitirSonido();
 	}
 	
@@ -38,7 +46,7 @@ public class Guarderia {
 	@Path("/gato")
 	@Produces("text/plain")
 	public String postGato (@QueryParam("nombre") String nombreGato, User nombreDuenno) {
-		Gato gato = new Gato(nombreGato);
+		Gato gato = new Gato(nombreGato, " miau.");
 		return emitirSonidoConNombreDuenno(gato, nombreDuenno);
 	}
 	
@@ -46,13 +54,22 @@ public class Guarderia {
 	@Path("/gallo")
 	@Produces(MediaType.TEXT_PLAIN)
 	public String gallo(@QueryParam("nombre") String nombregallo) {
-		Gallo gallo = new Gallo(nombregallo);
+		Gallo gallo = new Gallo(nombregallo, null);
 		return gallo.emitirSonido();
 	}
 
+	@POST
+	@Path("gallo")
+	@Produces(MediaType.TEXT_PLAIN)
+	public String postgallo (@QueryParam("nombre") String nombreperro, User nombreduenno){
+		Gallo gallo = new Gallo(nombreperro, " cocoroco.");
+		return emitirSonidoConNombreDuenno (gallo, nombreduenno);
+	}
+	
+	
 	private String emitirSonidoConNombreDuenno(Animales animal, User duenno) {
 		animal.setDuenno(duenno);
-		return animal.emitirSonido();
+		return animal.emitirSonidoConDuenno();
 	}
 }
 
