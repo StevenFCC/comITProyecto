@@ -13,15 +13,14 @@ public class HelloWorldController {
 
 	@GET
 	@Produces(MediaType.TEXT_PLAIN)
-	public void sayhello() {
+	public String sayhello() {
 			
-		//Perro teo = new Perro("Teo");
-		//Perro garnet = new Perro("Garnet");
-		//Gato jimmy = new Gato("Jimmy");
-		//Gallo claudio = new Gallo("Claudio");
+		Perro teo = new Perro("Teo");
+		Perro garnet = new Perro("Garnet");
+		Gato jimmy = new Gato("Jimmy");
+		Gallo claudio = new Gallo("Claudio");
 		
-		//String nombreDeLosAnimales = "Animales creados: " + teo.getNombre() + " " + garnet.getNombre() + " " +jimmy.getNombre() + " " + claudio.getNombre();
-		//return nombreDeLosAnimales + " " + teo.emitirSonido() + " " + garnet.emitirSonido() + " " + jimmy.emitirSonido() + " " + claudio.emitirSonido();
-		return;
+		String nombreDeLosAnimales = "Animales creados: " + teo.getNombre() + " " + garnet.getNombre() + " " +jimmy.getNombre() + " " + claudio.getNombre();
+		return nombreDeLosAnimales + " " + teo.emitirSonidoConDuenno() + " " + garnet.emitirSonidoConDuenno() + " " + jimmy.emitirSonidoConDuenno() + " " + claudio.emitirSonidoConDuenno();
 	}
 }

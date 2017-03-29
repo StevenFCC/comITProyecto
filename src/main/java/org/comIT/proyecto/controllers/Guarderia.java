@@ -11,7 +11,7 @@ import javax.ws.rs.core.MediaType;
 import org.comIT.proyecto.entities.Perro;
 import org.comIT.proyecto.entities.User;
 import org.comIT.proyecto.entities.Gato;
-import org.comIT.proyecto.entities.Animales;
+import org.comIT.proyecto.entities.Animal;
 import org.comIT.proyecto.entities.Gallo;
 
 @Consumes(MediaType.APPLICATION_JSON)
@@ -22,15 +22,15 @@ public class Guarderia {
 	@Path("/perro")
 	@Produces(MediaType.TEXT_PLAIN)
 	public String perro(@QueryParam("nombre") String nombreperro) {
-		Perro perro = new Perro(nombreperro, null);
-		return perro.emitirSonido();
+		Perro perro = new Perro(nombreperro);
+		return perro.emitirSonidoConDuenno();
 	}
 	
 	@POST
 	@Path("/perro")
 	@Produces(MediaType.TEXT_PLAIN)
 	public String postperro(@QueryParam("nombre") String nombreperro, User nombreduenno) {
-		Perro perro = new Perro(nombreperro, " guau.");
+		Perro perro = new Perro(nombreperro);
 		return emitirSonidoConNombreDuenno(perro, nombreduenno);
 	}
 	
@@ -38,15 +38,15 @@ public class Guarderia {
 	@Path("/gato")
 	@Produces(MediaType.TEXT_PLAIN)
 	public String gato(@QueryParam("nombre") String nombregato) {
-		Gato gato = new Gato(nombregato, null);
-		return gato.emitirSonido();
+		Gato gato = new Gato(nombregato);
+		return gato.emitirSonidoConDuenno();
 	}
 	
 	@POST
 	@Path("/gato")
 	@Produces("text/plain")
 	public String postGato (@QueryParam("nombre") String nombreGato, User nombreDuenno) {
-		Gato gato = new Gato(nombreGato, " miau.");
+		Gato gato = new Gato(nombreGato);
 		return emitirSonidoConNombreDuenno(gato, nombreDuenno);
 	}
 	
@@ -54,20 +54,20 @@ public class Guarderia {
 	@Path("/gallo")
 	@Produces(MediaType.TEXT_PLAIN)
 	public String gallo(@QueryParam("nombre") String nombregallo) {
-		Gallo gallo = new Gallo(nombregallo, null);
-		return gallo.emitirSonido();
+		Gallo gallo = new Gallo(nombregallo);
+		return gallo.emitirSonidoConDuenno();
 	}
 
 	@POST
 	@Path("gallo")
 	@Produces(MediaType.TEXT_PLAIN)
 	public String postgallo (@QueryParam("nombre") String nombreperro, User nombreduenno){
-		Gallo gallo = new Gallo(nombreperro, " cocoroco.");
+		Gallo gallo = new Gallo(nombreperro);
 		return emitirSonidoConNombreDuenno (gallo, nombreduenno);
 	}
 	
 	
-	private String emitirSonidoConNombreDuenno(Animales animal, User duenno) {
+	private String emitirSonidoConNombreDuenno(Animal animal, User duenno) {
 		animal.setDuenno(duenno);
 		return animal.emitirSonidoConDuenno();
 	}
