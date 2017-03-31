@@ -15,8 +15,8 @@ public class HuaweiY extends Celular {
 		this.flash = false;
 	}
 	
-	@Override
-	public String datosCelular() {
-		return getMarca() + " " + getModelo() + " " + getSistemaOperativo() + " " + getTamannoPantalla() + " " + getResolucionPantalla() + " " + getResolucionCamara() + " " + getResolucionCamaraFrontal() + " " + getMemoriaInterna();
-	}
+	//@Override
+	//public String datosCelular() {
+		//return getMarca() + " " + getModelo() + " " + getSistemaOperativo() + " " + getTamannoPantalla() + " " + getResolucionPantalla() + " " + getResolucionCamara() + " " + getResolucionCamaraFrontal() + " " + getMemoriaInterna();
+	//}
 }

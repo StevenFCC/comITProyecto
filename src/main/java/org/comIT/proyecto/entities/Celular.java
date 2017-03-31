@@ -65,7 +65,7 @@ public abstract class Celular {
 	}
 	
 	
-	public abstract String datosCelular();
+	//public abstract String datosCelular();
 	
 	
 	

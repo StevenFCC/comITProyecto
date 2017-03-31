@@ -15,8 +15,8 @@ public class GalaxyJ5 extends Celular {
 		this.flash = true;
 	}
 	
-	@Override
-	public String datosCelular() {
-		return getMarca() + " " + getModelo() + " " + getSistemaOperativo() + " " + getTamannoPantalla() + " " + getResolucionPantalla() + " " + getResolucionCamara() + " " + getResolucionCamaraFrontal() + " " + getMemoriaInterna();
-	}
+	//@Override
+	//public String datosCelular() {
+		//return getMarca() + " " + getModelo() + " " + getSistemaOperativo() + " " + getTamannoPantalla() + " " + getResolucionPantalla() + " " + getResolucionCamara() + " " + getResolucionCamaraFrontal() + " " + getMemoriaInterna();
+	//}
 }
