@@ -7,6 +7,7 @@ function mostrarTodasLasListasDeCelulares(celularAMostrar) {
 		}
 	}
 
+	var celularAMostrar = selectorDeMarca();
 	var endpoint = "/comITProyecto/ws/celulares" + celularAMostrar;
 	xhr.open("GET", endpoint, true);
 	xhr.send(null);
@@ -18,4 +19,20 @@ function mostrarLista(lista) {
 	tomarDivDeHttml.appendChild(crearP);
 	var crearNodoTexto = document.createTextNode(lista);
 	crearP.appendChild(crearNodoTexto);
+}
+
+function selectorDeMarca() {
+	var tomarSelectDeHttml = document.getElementsByTagName("select")[0];
+	if (tomarSelectDeHttml.value == "Motorola") {
+		return "/listamotog4";
+	}
+	if (tomarSelectDeHttml.value == "Samsung") {
+		return "/listagalaxyj5";
+	}
+	if (tomarSelectDeHttml.value == "Huawei") {
+		return "/listahuaweiy";
+	}
+	if (tomarSelectDeHttml.value == "Lenovo") {
+		return "/listavibek5";
+	}
 }

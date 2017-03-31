@@ -8,7 +8,7 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
-//import org.comIT.proyecto.entities.Celular;
+import org.comIT.proyecto.entities.Celular;
 import org.comIT.proyecto.entities.GalaxyJ5;
 import org.comIT.proyecto.entities.HuaweiY;
 import org.comIT.proyecto.entities.MotoG4;
@@ -21,17 +21,10 @@ public class ListaCelularesController {
 	@GET
 	@Path("/listamotog4")
 	@Produces(MediaType.APPLICATION_JSON)
-	public List<String> listaCelularMotoG4() {
+	public List<Celular> listaCelularMotoG4() {
 		MotoG4 celularCreado = new MotoG4();
 		return Arrays.asList(
-				celularCreado.getMarca(),
-				celularCreado.getModelo(),
-				celularCreado.getSistemaOperativo(),
-				celularCreado.getTamannoPantalla(),
-				celularCreado.getResolucionPantalla(),
-				celularCreado.getResolucionCamara(),
-				celularCreado.getResolucionCamaraFrontal(),
-				celularCreado.getMemoriaInterna()	
+				celularCreado	
 		);
 	}
 	
