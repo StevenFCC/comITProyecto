@@ -9,10 +9,11 @@ body {
 	background-image: url(../paginas/imagenes/01150_webdew_2560x1600.jpg);
 	background-repeat: repeat-y;
 }
-
+.ocultar,
 #mensaje {
 	/*display: none;*/
 	visibility: hidden;
+<<<<<<< HEAD
 	width: 0;
 	height: 0;
 }
@@ -109,6 +110,9 @@ div#divEspecificaciones	{
 
 .ocultar {
 	visibility: hidden;
+=======
+	height: 0px;
+>>>>>>> upstream2/master
 }
 
 .mostrar {
