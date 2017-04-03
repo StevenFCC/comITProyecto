@@ -14,18 +14,25 @@
 	</div>
 	<br>
 	<br>
-	<select id="selectorDeMarca">
-		<option>Motorola</option>
-		<option>Samsung</option>
-		<option>Lenovo</option>
-		<option>Huawei</option>
-	</select>
+	<input id="inputAgregar" type="button" onclick="mostrarTodasLasListasDeCelulares()" value="Agregar lista de celular"></input>
 	<br>
 	<br>
-	<input id="inputAgregar" type="button" onclick="mostrarTodasLasListasDeCelulares('/listavibek5')" value="Agregar lista de celular"></input>
+	<input id="inputEliminar" type="button" onclick="eliminarElementos()" value="Eliminar lista de celular"></input>
 	<br>
 	<br>
-	<input id="inputEliminar" type="button" onclick="" value="Eliminar lista de celular"></input>
+	<p>Filtros:</p>
+	
+	<p>
+	Mostrar Celulares con Camara Frontal
+	<input id="inputCamaraFrontal" type="checkbox"></input>
+	</p>
 
+	<p>
+	Mostrar Celulares con Flash
+	<input id="inputFlash" type="checkbox"></input>
+	</p>
+	<br>
+
+	<input type="button" onclick="filtrar()" value="Filtrar">
 </body>
 </html>

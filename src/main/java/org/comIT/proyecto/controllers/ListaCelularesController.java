@@ -19,63 +19,18 @@ import org.comIT.proyecto.entities.VibeK5;
 public class ListaCelularesController {
 	
 	@GET
-	@Path("/listamotog4")
+	@Path("/listacelulares")
 	@Produces(MediaType.APPLICATION_JSON)
-	public List<Celular> listaCelularMotoG4() {
-		MotoG4 celularCreado = new MotoG4();
+	public List<Celular> listadoDeCelulares() {
+		MotoG4 motoG4 = new MotoG4();
+		GalaxyJ5 galaxyJ5 = new GalaxyJ5();
+		HuaweiY huaweiY = new HuaweiY();
+		VibeK5 vibeK5 = new VibeK5();
 		return Arrays.asList(
-				celularCreado	
-		);
-	}
-	
-	@GET
-	@Path("/listagalaxyj5")
-	@Produces(MediaType.APPLICATION_JSON)
-	public List<String> listaCelularGalaxyJ5() {
-		GalaxyJ5 celularCreado = new GalaxyJ5();
-		return Arrays.asList(
-				celularCreado.getMarca(),
-				celularCreado.getModelo(),
-				celularCreado.getSistemaOperativo(),
-				celularCreado.getTamannoPantalla(),
-				celularCreado.getResolucionPantalla(),
-				celularCreado.getResolucionCamara(),
-				celularCreado.getResolucionCamaraFrontal(),
-				celularCreado.getMemoriaInterna()	
-		);
-	}
-	
-	@GET
-	@Path("/listahuaweiy")
-	@Produces(MediaType.APPLICATION_JSON)
-	public List<String> listaCelularHuaweiY() {
-		HuaweiY celularCreado = new HuaweiY();
-		return Arrays.asList(
-				celularCreado.getMarca(),
-				celularCreado.getModelo(),
-				celularCreado.getSistemaOperativo(),
-				celularCreado.getTamannoPantalla(),
-				celularCreado.getResolucionPantalla(),
-				celularCreado.getResolucionCamara(),
-				celularCreado.getResolucionCamaraFrontal(),
-				celularCreado.getMemoriaInterna()	
-		);
-	}
-	
-	@GET
-	@Path("/listavibek5")
-	@Produces(MediaType.APPLICATION_JSON)
-	public List<String> listaCelularVibeK5() {
-		VibeK5 celularCreado = new VibeK5();
-		return Arrays.asList(
-				celularCreado.getMarca(),
-				celularCreado.getModelo(),
-				celularCreado.getSistemaOperativo(),
-				celularCreado.getTamannoPantalla(),
-				celularCreado.getResolucionPantalla(),
-				celularCreado.getResolucionCamara(),
-				celularCreado.getResolucionCamaraFrontal(),
-				celularCreado.getMemoriaInterna()	
+				motoG4,
+				galaxyJ5,
+				huaweiY,
+				vibeK5
 		);
 	}
 	

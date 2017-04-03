@@ -132,17 +132,17 @@ function listaCelulares(contador) {
 	var ul = document.createElement("ul");
 		ul.className = "ulnuevo";
 
-			imagenDeCelular(ul,listadoCelulares[contador].imagen);
-			propiedadCelular("Marca: ",listadoCelulares[contador].marca,ul);
-			propiedadCelular("Modelo: ",listadoCelulares[contador].modelo,ul);
-			propiedadCelular("Sistema Operativo: ",listadoCelulares[contador].sistema_operativo,ul);
-			propiedadCelular("Pantalla: ",listadoCelulares[contador].pantalla_pulgadas,ul);
-			propiedadCelular("Resolucion de Pantalla: ",listadoCelulares[contador].pantalla_resolucion,ul);
-			propiedadCelular("Camara: ",listadoCelulares[contador].camara_resolucion,ul);
-			propiedadCelularCheckbox("Camara Frontal",listadoCelulares[contador].camara_frontal,ul),
-			propiedadCelular("Resolucion de Camara Frontal: ",listadoCelulares[contador].camara_frontal_res,ul);
-			propiedadCelular("Memoria Interna: ",listadoCelulares[contador].memoria_interna,ul);
-			propiedadCelularCheckbox("Flash",listadoCelulares[contador].flash,ul);
+		imagenDeCelular(ul,listadoCelulares[contador].imagen);
+		propiedadCelular("Marca: ",listadoCelulares[contador].marca,ul);
+		propiedadCelular("Modelo: ",listadoCelulares[contador].modelo,ul);
+		propiedadCelular("Sistema Operativo: ",listadoCelulares[contador].sistema_operativo,ul);
+		propiedadCelular("Pantalla: ",listadoCelulares[contador].pantalla_pulgadas,ul);
+		propiedadCelular("Resolucion de Pantalla: ",listadoCelulares[contador].pantalla_resolucion,ul);
+		propiedadCelular("Camara: ",listadoCelulares[contador].camara_resolucion,ul);
+		propiedadCelularCheckbox("Camara Frontal",listadoCelulares[contador].camara_frontal,ul),
+		propiedadCelular("Resolucion de Camara Frontal: ",listadoCelulares[contador].camara_frontal_res,ul);
+		propiedadCelular("Memoria Interna: ",listadoCelulares[contador].memoria_interna,ul);
+		propiedadCelularCheckbox("Flash",listadoCelulares[contador].flash,ul);
 		
 	var div = document.getElementById("nuevosElementos");
 	div.appendChild(ul);
@@ -168,8 +168,6 @@ function eliminarElementos() {
 }
 
 function seleccionarCamaraFrontalOFlash(camaraFlash) {
-	
-	eliminarElementos();
 
 	for ( var cont = 0 ; cont < listadoCelulares.length ; cont++) {
 		
@@ -190,12 +188,9 @@ function filtrarPorCamaraFrontal() {
 
 	estadosDeCheckboxs();
 
-	if (inputCamaraFrontal.checked == true) {
+	if (inputCamaraFrontal.checked == true && inputFlash.checked == false) {
 
-		if (inputFlash.checked == false) {
-
-			seleccionarCamaraFrontalOFlash("camara_frontal");
-		}
+		seleccionarCamaraFrontalOFlash("camara_frontal");
 	}
 }
 
@@ -203,12 +198,9 @@ function filtrarPorFlash() {
 
 	estadosDeCheckboxs();
 
-	if (inputCamaraFrontal.checked == false) {
+	if (inputCamaraFrontal.checked == false && inputFlash.checked == true) {
 
-		if (inputFlash.checked == true) {
-
-			seleccionarCamaraFrontalOFlash("flash");
-		}
+		seleccionarCamaraFrontalOFlash("flash");
 	}
 }
 
@@ -216,19 +208,13 @@ function filtrarPorCamaraFrontalConFlash() {
 	
 	estadosDeCheckboxs();
 
-	if (inputCamaraFrontal.checked == true) {
+	if (inputCamaraFrontal.checked == true && inputFlash.checked == true) {
 
-		if (inputFlash.checked == true) {
-
-			for ( var cont = 0 ; cont < listadoCelulares.length ; cont++) {
+		for ( var cont = 0 ; cont < listadoCelulares.length ; cont++) {
 			
-				if (listadoCelulares[cont].camara_frontal) {
+			if (listadoCelulares[cont].camara_frontal && listadoCelulares[cont].flash) {
 
-					if (listadoCelulares[cont].flash) {
-
-						listaCelulares(cont);
-					}
-				}
+				listaCelulares(cont);	
 			}
 		}
 	}	
