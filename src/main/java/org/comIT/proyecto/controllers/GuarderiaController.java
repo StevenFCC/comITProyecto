@@ -11,7 +11,6 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 
-import org.comIT.proyecto.connections.VeterinariaDAO;
 import org.comIT.proyecto.entities.User;
 import org.comIT.proyecto.entities.animales.Animal;
 import org.comIT.proyecto.entities.animales.Gallo;
