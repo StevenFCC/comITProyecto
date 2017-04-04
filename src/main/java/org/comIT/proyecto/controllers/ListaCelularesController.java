@@ -33,13 +33,6 @@ public class ListaCelularesController {
 				vibeK5
 		);
 	}
-	
-	@GET
-	@Path("/prueba")
-	@Produces(MediaType.TEXT_PLAIN)
-	public String prueba1() {
-		return "Prueba\nPrueba 2";
-	}
 }
 
 

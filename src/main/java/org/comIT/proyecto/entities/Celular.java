@@ -13,8 +13,7 @@ public abstract class Celular {
 	protected String resolucionCamaraFrontal;
 	protected String memoriaInterna;
 	protected boolean flash;
-	//protected int precio;
-	
+		
 	
 	public String getMarca() {
 		return marca;
@@ -55,12 +54,4 @@ public abstract class Celular {
 	public boolean isFlash() {
 		return flash;
 	}
-	
-	//public int getPrecio() {
-		//return precio;
-	//}
-	
-	//public void setPrecio(int precio) {
-		//this.precio = precio;
-	//}
 }
