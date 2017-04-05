@@ -9,8 +9,11 @@ import javax.ws.rs.QueryParam;
 public class EchoController {
 	@GET
 	@Produces("text/plain")
-	public String echo (@QueryParam("parametro") String message, @QueryParam("contador") int cont){
-		return "echo: " + message + cont;
+	public void echo (@QueryParam("parametro") String message, @QueryParam("contador") int cont){
+		
+		for ( int contador = 0; cont>contador; cont--){
+			//String echo = "echo ";
+		}		
 	}
 }
 

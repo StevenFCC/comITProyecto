@@ -21,6 +21,6 @@ public class HelloWorldController {
 		Gallo claudio = new Gallo("Claudio");
 		
 		String nombreDeLosAnimales = "Animales creados: " + teo.getNombre() + " " + garnet.getNombre() + " " +jimmy.getNombre() + " " + claudio.getNombre();
-		return nombreDeLosAnimales + " " + teo.emitirSonidoConDuenno() + " " + garnet.emitirSonidoConDuenno() + " " + jimmy.emitirSonidoConDuenno() + " " + claudio.emitirSonidoConDuenno();
+		return nombreDeLosAnimales + " " + teo.emitirSonido() + " " + garnet.emitirSonido() + " " + jimmy.emitirSonido() + " " + claudio.emitirSonido();
 	}
 }

@@ -8,6 +8,13 @@ public class Gallo extends Animal {
 
 	@Override
 	public String emitirSonido() {
-		return " cocoroco.";
+		return nombre + " dice cocoroco.";
 	}
+
+	@Override
+	public TipoAnimal getTipoAnimal() {
+		return TipoAnimal.GALLO;
+	}
+	
+	
 }

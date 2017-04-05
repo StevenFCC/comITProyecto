@@ -4,6 +4,7 @@ public abstract class Animal {
 	
 	protected String nombre;
 	protected User duenno;
+	protected int cantidadPatas;
 		
 	
 	public String getNombre() {
@@ -18,13 +19,25 @@ public abstract class Animal {
 		this.duenno = duenno;
 	}
 
-	public abstract String emitirSonido();
+	public void perderPata() {
+		if(cantidadPatas > 0) {
+			cantidadPatas --;
+		}
+	}
 	
+	public int getCantidadPatas() {
+		return cantidadPatas;
+	}
+
+	public abstract String emitirSonido();
+
 	public String emitirSonidoConDuenno() {
-		String sonido = nombre + " dice" + emitirSonido();
+		String sonido = emitirSonido();
 		if (this.getDuenno() != null) {
 			sonido += " Mi dueño es " + this.getDuenno().getName();
 		}
 		return sonido;
 	}
+	
+	public abstract TipoAnimal getTipoAnimal();
 }

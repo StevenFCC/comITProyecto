@@ -8,6 +8,11 @@ public class Perro extends Animal {
 
 	@Override
 	public String emitirSonido() {
-		return " guau.";
+		return nombre + " dice guau.";
+	}
+
+	@Override
+	public TipoAnimal getTipoAnimal() {
+		return TipoAnimal.PERRO;
 	}
 }

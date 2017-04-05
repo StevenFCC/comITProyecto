@@ -16,14 +16,14 @@ import org.comIT.proyecto.entities.Gallo;
 
 @Consumes(MediaType.APPLICATION_JSON)
 @Path("guarderia")
-public class Guarderia {
+public class GuarderiaController {
 	
 	@GET
 	@Path("/perro")
 	@Produces(MediaType.TEXT_PLAIN)
 	public String perro(@QueryParam("nombre") String nombreperro) {
 		Perro perro = new Perro(nombreperro);
-		return perro.emitirSonidoConDuenno();
+		return perro.emitirSonido();
 	}
 	
 	@POST
@@ -39,7 +39,7 @@ public class Guarderia {
 	@Produces(MediaType.TEXT_PLAIN)
 	public String gato(@QueryParam("nombre") String nombregato) {
 		Gato gato = new Gato(nombregato);
-		return gato.emitirSonidoConDuenno();
+		return gato.emitirSonido();
 	}
 	
 	@POST
@@ -55,7 +55,7 @@ public class Guarderia {
 	@Produces(MediaType.TEXT_PLAIN)
 	public String gallo(@QueryParam("nombre") String nombregallo) {
 		Gallo gallo = new Gallo(nombregallo);
-		return gallo.emitirSonidoConDuenno();
+		return gallo.emitirSonido();
 	}
 
 	@POST
